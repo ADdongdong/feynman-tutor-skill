@@ -5,7 +5,7 @@ description: |
   用费曼学习法根治假学习：生活类比开场让你秒懂原理 → 追问让你用自己的话复述 → 诊断你卡在哪 → 对症补强 → 直到你能把它讲给别人听。
   触发词：教我、我想学、帮我理解、费曼方法、深入理解、学习概念。
 agent_created: true
-version: 1.0.0
+version: 1.1.1
 display_name: "费曼学习法 · 真懂教练"
 display_name_en: "Feynman Tutor"
 description_zh: "用费曼法确保你真正理解概念——类比开场、追问输出、诊断根因、对症补强，直到你能讲给别人听。"
@@ -192,3 +192,4 @@ ASSESS 失败 → DIAGNOSE（诊断根因）→ REMEDIATE（对症补强）→ �
 | `references/error_handling.md` | 异常处理规范、卡死检测、降级策略 | 遇到异常输入或教学卡壳时 |
 | `references/faq.md` | 常见问题解答（跳过规则、换目标等级、复习、断点续学等） | 用户提出常见疑问时 |
 | `references/learning_templates.md` | 可重用教学模板（输入源/学科类型/教学原子函数） | 需要按学科特性调整教学策略时 |
+| `references/teaching_cases.md` | 完整教学案例（真实对话流 + 技巧提炼 + 陷阱设计逻辑） | 需要参考"好的教学长什么样"时 |
