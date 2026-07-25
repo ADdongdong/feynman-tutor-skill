@@ -16,13 +16,21 @@ MODULE_PLAN     → 节点3：LLM 拆解模块，可「跳过已学」
 LECTURE         → 节点4：类比开场 → 「懂了/没太懂」
 HOMEWORK        → 节点5：出 1-2 道开放题（核心：用自己的话解释）
 ASSESS          → 节点6：评估用户回答 → 输出结构化评估结果
-  ├─ PASS  → MODULE_DONE（标记掌握，归档文档）
+  ├─ PASS  → PRACTICE（节点7，条件触发）
   └─ FAIL  → DIAGNOSE
+PRACTICE        → 节点7：做中学（条件触发）
+  ├─ 条件1：goal_level >= 🟡能用上？
+  │    ├─ 否（🟢能看懂）→ 跳过 → MODULE_DONE
+  │    └─ 是 → 检查条件2
+  ├─ 条件2：PRACTICE 场景是否需要未学过的前置知识？
+  │    ├─ 是 → 跳过或简化场景 → MODULE_DONE
+  │    └─ 否 → 进入 PRACTICE
+  └─ PRACTICE 完成 → MODULE_DONE
 DIAGNOSE        → 节点6：诊断根因
 REMEDIATE       → 对症补强（换比喻/插微课/换题型/建议休息）
   → 回到 HOMEWORK 或 LECTURE（视根因）
-MODULE_DONE     → 节点7：before/after + 掌握清单 + 归档 3 类文档
-REVIEW          → 节点8：输出型复习（做题/复述），由宿主调度触发
+MODULE_DONE     → 节点8：before/after + 掌握清单 + 归档 3 类文档
+REVIEW          → 节点9：输出型复习（做题/复述），由宿主调度触发
 ```
 
 ## 落地说明

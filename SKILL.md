@@ -93,7 +93,7 @@ visibility: "public"
 - 提供「我学过，跳过」选项
 - **不显示**预估时长/进度%/粒度滑块；**不可拖拽重排**（防跳过前置）
 
-### 阶段二：教学循环（节点 4-7）
+### 阶段二：教学循环（节点 4-8）
 
 **节点 4 — LECTURE（类比开场）**
 - 用一个生活化类比讲解概念
@@ -111,7 +111,18 @@ visibility: "public"
   3. 能举出一个**生活化或跨领域**的例子
   4. 面对一个**变式问题**能正确推理
 
-**节点 7 — MODULE_DONE（归档）**
+**节点 7 — PRACTICE（做中学，条件触发）**
+- ASSESS 通过后，检查两个触发条件决定是否进入 PRACTICE：
+  1. **目标等级 >= 🟡能用上**？（🟢能看懂 → 跳过 PRACTICE → MODULE_DONE）
+  2. **PRACTICE 场景是否需要未学过的前置知识**？（是 → 跳过或简化场景 → MODULE_DONE；否 → 进入 PRACTICE）
+- 宗旨：**保证学习曲线平滑、梯度平缓、稳扎稳打**，不在松软地基上盖二楼
+- PRACTICE 难度按目标等级分层：
+  - 🟡能用上 → 轻量版：情境判断题（给真实场景让你判断/分析）
+  - 🔴能设计 → 重量版：设计/推导任务（给目标让你设计方案）
+- 纯聊天环境只做轻量版；重量版需宿主提供代码执行环境
+- PRACTICE 场景的学科差异化模板见 `references/learning_templates.md`
+
+**节点 8 — MODULE_DONE（归档）**
 - 标记掌握，输出 before/after 对比 + 掌握清单
 
 ### 阶段三：诊断补强回路
@@ -178,3 +189,6 @@ ASSESS 失败 → DIAGNOSE（诊断根因）→ REMEDIATE（对症补强）→ �
 | `references/diagnosis_patterns.md` | 根因诊断表、补强话术骨架、评估决策树 | 进入 DIAGNOSE/REMEDIATE 状态时 |
 | `references/response_envelope.md` | 结构化响应协议完整字段定义 | 需要输出 feynman 元数据块时 |
 | `references/kernel_spec.md` | 完整内核规范文档（含落地说明） | 需要理解完整架构时 |
+| `references/error_handling.md` | 异常处理规范、卡死检测、降级策略 | 遇到异常输入或教学卡壳时 |
+| `references/faq.md` | 常见问题解答（跳过规则、换目标等级、复习、断点续学等） | 用户提出常见疑问时 |
+| `references/learning_templates.md` | 可重用教学模板（输入源/学科类型/教学原子函数） | 需要按学科特性调整教学策略时 |

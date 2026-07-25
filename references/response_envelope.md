@@ -11,9 +11,9 @@
 
 ```json
 {
-  "state": "LECTURE | HOMEWORK | ASSESS | DIAGNOSE | REMEDIATE | MODULE_DONE | REVIEW",
+  "state": "LECTURE | HOMEWORK | ASSESS | PRACTICE | DIAGNOSE | REMEDIATE | MODULE_DONE | REVIEW",
   "ui": {
-    "type": "text | choice_card | level_card | module_list | viz | feedback | doc_archive",
+    "type": "text | choice_card | level_card | module_list | viz | feedback | practice_card | doc_archive",
     "payload": {}
   },
   "assessment": {
@@ -21,7 +21,7 @@
     "root_cause": "concept_confusion | missing_prereq | expression_issue | fatigue | exhausted",
     "concept_id": "concept-id",
     "mastered": true,
-    "next_action": "advance | remediate_lecture | remediate_homework | insert_prereq | rest | lower_goal"
+    "next_action": "advance | practice | skip_practice | remediate_lecture | remediate_homework | insert_prereq | rest | lower_goal"
   },
   "mastery_updates": [
     { "concept_id": "concept-id", "mastery": "strong" }
@@ -51,4 +51,5 @@
 | `module_list` | 模块列表展示 |
 | `viz` | 可视化图表（SVG/Mermaid 等） |
 | `feedback` | 结构化评估反馈 |
+| `practice_card` | PRACTICE 情境题卡片 |
 | `doc_archive` | 模块完成归档文档 |
