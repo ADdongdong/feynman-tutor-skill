@@ -12,6 +12,7 @@
 GREETING        → 欢迎 + 介绍方法论
 SUBJECT_SELECT  → 节点1：学科/领域/GitHub/上传 选择
 GOAL_SELECT     → 节点2：3 级场景化目标选择（无摸底题）
+                 （上下文模式可预选推断等级，须用户确认/改选后才继续；见 SKILL.md「节点 1.5」）
 MODULE_PLAN     → 节点3：LLM 拆解模块，可「跳过已学」
 LECTURE         → 节点4：类比开场 → 「懂了/没太懂」
 HOMEWORK        → 节点5：出 1-2 道开放题（核心：用自己的话解释）

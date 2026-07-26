@@ -47,7 +47,7 @@
 |---|---|
 | `text` | 普通文本讲解 |
 | `choice_card` | 选择题卡片（目标分级、模块跳过等） |
-| `level_card` | 3 级目标选择卡 |
+| `level_card` | 3 级目标选择卡（上下文模式可附 `inferred` 与 `reason`，用于预选并展示推断依据） |
 | `module_list` | 模块列表展示 |
 | `viz` | 可视化图表（SVG/Mermaid 等） |
 | `feedback` | 结构化评估反馈 |
