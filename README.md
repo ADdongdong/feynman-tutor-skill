@@ -74,6 +74,10 @@ feynman-tutor-skill/
 
 详细状态机见 `references/kernel_spec.md`。
 
+## 前置依赖（Obsidian 同步）
+
+`学习总结归档到 Obsidian` 功能（节点 8）需用户本机已安装 [Obsidian](https://obsidian.md) 并配置默认 vault，且可通过 `obsidian-cli` 调用。未安装/未配置时，归档逻辑自动跳过，仅对话输出学习总结，不影响主流程。该功能仅面向使用 Obsidian 的用户；不使用 Obsidian 的用户无需任何配置，学习体验完全一致。
+
 ## 版本管理
 
 遵循 [语义化版本](https://semver.org/lang/zh-CN/)：
