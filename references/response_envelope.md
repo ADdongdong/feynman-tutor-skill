@@ -52,4 +52,4 @@
 | `viz` | 可视化图表（SVG/Mermaid 等） |
 | `feedback` | 结构化评估反馈 |
 | `practice_card` | PRACTICE 情境题卡片 |
-| `doc_archive` | 模块完成归档文档 |
+| `doc_archive` | 模块完成归档文档；Obsidian 可用时同步至 `费曼学习/` 目录，按内容智能归类、同概念补充不覆盖 |

@@ -30,7 +30,7 @@ PRACTICE        → 节点7：做中学（条件触发）
 DIAGNOSE        → 节点6：诊断根因
 REMEDIATE       → 对症补强（换比喻/插微课/换题型/建议休息）
   → 回到 HOMEWORK 或 LECTURE（视根因）
-MODULE_DONE     → 节点8：before/after + 掌握清单 + 归档 3 类文档
+MODULE_DONE     → 节点8：before/after + 掌握清单 + 归档；Obsidian 可用时同步至「费曼学习/」并按内容智能归类（详见 SKILL.md 节点 8）
 REVIEW          → 节点9：输出型复习（做题/复述），由宿主调度触发
 ```
 
