@@ -49,7 +49,7 @@
 | `choice_card` | 选择题卡片（目标分级、模块跳过等） |
 | `level_card` | 3 级目标选择卡（上下文模式可附 `inferred` 与 `reason`，用于预选并展示推断依据） |
 | `module_list` | 模块列表展示 |
-| `viz` | 可视化图表（SVG/Mermaid 等） |
+| `viz` | 可视化图表。payload: `{"format":"mermaid\|svg", "source":"<代码块源码>", "caption":"<图注>"}`；按 P8 主动配图，源码随讲解给出并随 `doc_archive` 归档进笔记 |
 | `feedback` | 结构化评估反馈 |
 | `practice_card` | PRACTICE 情境题卡片 |
-| `doc_archive` | 模块完成归档文档；Obsidian 可用时同步至 `费曼学习/` 目录，按内容智能归类、同概念补充不覆盖 |
+| `doc_archive` | 模块完成归档文档；Obsidian 可用时同步至 `费曼学习/{学科}/{概念}.md`（学科钉死根，同概念补充不覆盖），笔记含文字总结 + 图示代码块 |
