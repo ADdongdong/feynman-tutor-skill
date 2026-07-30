@@ -2,96 +2,23 @@
 
 > 确保你真正学懂一个概念，而不是假装学懂。
 
-## 这是什么
+（本说明随 skill 一同发布；完整文档与更新见 [GitHub 仓库](https://github.com/ADdongdong/feynman-tutor-skill)。）
 
-一个 [WorkBuddy](https://workbuddy.com) Skill，用费曼学习法确保用户**真正理解**一个概念，而不是表面记住。
+## 学习总结归档到 Obsidian（前置依赖）
 
-大多数学习是假学习：看完一段话，点头说"懂了"，但真让你解释却说不出来。这个 skill 根治这个问题：
+本 skill 的「节点 8 学习总结归档」功能，会把每次学习总结成一个 Markdown 文档，同步到你本机的 Obsidian vault，路径为 `费曼学习/{学科}/{概念}.md`。
 
-**生活类比让你秒懂原理 → 追问让你用自己的话复述 → 诊断你到底卡在哪 → 对症补强 → 直到你能把它讲给别人听。**
+**前置依赖**：需用户本机已安装 [Obsidian](https://obsidian.md) 并配置默认 vault，且可通过 `obsidian-cli` 调用（执行 `obsidian-cli print-default --path-only` 能返回 vault 路径）。
 
-## 核心特性
+**未满足时**：skill 在节点 8 先检测，**检测不到 Obsidian 则不进入归档逻辑**，仅对话输出学习总结，不影响费曼学习主流程。该功能仅面向使用 Obsidian 的用户；不使用 Obsidian 的用户无需任何配置，学习体验完全一致。
 
-- **类比开场**：不用术语堆砌，用快递分拣、电影院找座位这种生活类比，30 秒产生"原来如此"
-- **输出型验证**：不能只点"我懂了"，必须用自己的话讲出来、写出来
-- **根因诊断**：答不好不等于"你不行"，先诊断是概念混淆、缺前置知识、还是表达问题，再对症下药
-- **不通过不放行**：评估没过就补强，绝不让你带着一知半解进入下一概念
-- **即时反馈**：你回答任何问题后，先告诉你哪些对了、哪些有问题，再继续讲
+## 目录策略
 
-## 安装
+- 根目录固定：`费曼学习/`
+- 一级目录 = 节点 1 所选「学科名」（不浮动，保证同概念稳定定位到同一文件）
+- 其下子目录可按内容细分
+- 同一概念再次学习 → 追加到同一文档，不覆盖历史
 
-### 方式一：手动安装
+## 掌握深度按学科本族化（v1.1.6）
 
-```bash
-# 1. clone 本仓库
-git clone https://github.com/ADdongdong/feynman-tutor-skill.git
-
-# 2. 把 skill 目录复制到 WorkBuddy skills 目录
-cp -r feynman-tutor-skill ~/.workbuddy/skills/feynman-tutor
-```
-
-### 方式二：使用安装脚本（Windows PowerShell）
-
-```powershell
-git clone https://github.com/ADdongdong/feynman-tutor-skill.git
-.\feynman-tutor-skill\install.ps1
-```
-
-## 使用方法
-
-在 WorkBuddy 对话中直接说：
-
-- "我想学【多模态】，用费曼方法教我"
-- "教我理解对齐"
-- "帮我深入理解向量数据库"
-- "费曼方法讲讲 RAG"
-
-触发后 skill 会自动加载，按费曼学习法流程带你学。
-
-## 目录结构
-
-```
-feynman-tutor-skill/
-├── SKILL.md                          # Skill 主入口（frontmatter + 核心流程）
-├── references/
-│   ├── diagnosis_patterns.md         # 根因诊断表 + 补强话术 + 评估决策树
-│   ├── response_envelope.md          # 结构化响应协议字段定义
-│   └── kernel_spec.md               # 完整内核规范（状态机 + 落地说明）
-├── install.ps1                       # Windows 安装脚本
-├── .gitignore
-└── README.md                         # 你正在看的这个文件
-```
-
-## 教学流程
-
-```
-学科选择 → 目标分级（能看懂/能用上/能设计）→ 模块计划
-    ↓
-类比开场 → 出题验证 → 评估
-    ↓                          ↓ 不通过
-  通过 → 归档              诊断根因 → 对症补强 → 回到验证
-```
-
-详细状态机见 `references/kernel_spec.md`。
-
-## 前置依赖（Obsidian 同步）
-
-`学习总结归档到 Obsidian` 功能（节点 8）需用户本机已安装 [Obsidian](https://obsidian.md) 并配置默认 vault，且可通过 `obsidian-cli` 调用。未安装/未配置时，归档逻辑自动跳过，仅对话输出学习总结，不影响主流程。该功能仅面向使用 Obsidian 的用户；不使用 Obsidian 的用户无需任何配置，学习体验完全一致。
-
-## 版本管理
-
-遵循 [语义化版本](https://semver.org/lang/zh-CN/)：
-
-- **主版本号**：教学流程架构变更（如状态机重构）
-- **次版本号**：新增功能（如新增复习队列、新增模态支持）
-- **修订号**：修复 bug、优化话术、调整规则
-
-## 技术栈
-
-- 纯 Markdown，无依赖
-- 兼容 WorkBuddy Skill 规范 v1
-- 可同时作为 WorkBuddy Expert 使用（需转换格式）
-
-## License
-
-MIT
+目标分级不再写死「能看懂 / 能用上 / 能设计」，而是按学科显示本族化的掌握阶梯（如历史 5 级、数学 4 级，范围锁 3~5 级）。最浅级跳过练习、中间级轻量练习、最高级重量练习——任何学科的同一套逻辑都成立。表里未列出的学科，agent 会按类型直接提议一套阶梯。
